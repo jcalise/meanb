@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="nav">
+    <a [routerLink]="['/create']">Create a New Poll</a>
+    <a [routerLink]="['/logout']" (click)="logout()">Logout</a>
+  </div>
+  <div class="content">
+    <h2>Current Polls:</h2>
+  </div>
+  <div class="search">
+    <form (submit)="search()">
+      <input type="search" name="search" placeholder="Search..." [(ngModel)]="searchTerm">
+    </form>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Survey Question</th>
+        <th>Date Posted</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let survey of surveys">
+        <td>{{ survey.name }}</td>
+        <td><a [routerLink]="['/single', survey._id]">{{ survey.question }}</a></td>
+        <td>{{ survey.createdAt | date:'longDate' }}</td>
+        <td><button *ngIf="survey.name == user" (click)="delete(survey._id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

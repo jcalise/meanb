@@ -1,0 +1,36 @@
+.main {
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    text-align: right;
+    display: block;
+}
+.search {
+    text-align: right;
+    display: block;
+    margin: 10px;
+}
+table {
+    width: 100%;
+    text-align: center;
+}
+table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+input[type=search], [type=button] {
+    width: 20%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: .75em;
+    padding: 6px 10px 6px 10px;
+}
