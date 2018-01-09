@@ -12,7 +12,7 @@ const cors = require('cors');
 app.use(cors());
 
 // Static Dir
-app.use(express.static(__dirname + '/angapp/dist'));
+app.use(express.static(__dirname + '/client/dist'));
 
 // Body Parser
 const parser = require('body-parser');
